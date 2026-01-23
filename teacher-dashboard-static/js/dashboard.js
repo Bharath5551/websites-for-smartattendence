@@ -1,4 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
+
+// 🔐 FRONTEND AUTH GUARD
+const token = localStorage.getItem("token");
+const role = localStorage.getItem("role");
+
+if (!token || role !== "teacher") {
+  window.location.replace("index.html");
+}document.addEventListener("DOMContentLoaded", () => {
   console.log("TEACHER DASHBOARD JS LOADED");
 
   const token = localStorage.getItem("token");
