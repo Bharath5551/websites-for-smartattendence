@@ -1,48 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Dashboard</title>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard • Smart Attendance</title>
   <link rel="stylesheet" href="css/style1.css">
 </head>
+
 <body>
+
+  <!-- Background glow -->
+  <div class="bg-glow"></div>
 
   <div class="container">
 
-    <!-- HERO HEADER -->
-    <div class="hero">
+    <!-- HERO -->
+    <div class="hero glass">
       <div>
         <h1>Admin Control Panel</h1>
-        <p>Manage teachers and subjects</p>
+        <p>Manage teachers, subjects & access</p>
       </div>
       <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 
-    <!-- ADD TEACHER -->
-    <div class="card">
-      <h3>Add Teacher</h3>
-      <input id="tname" placeholder="Name">
-      <input id="temail" placeholder="Email">
-      <input id="tpassword" placeholder="Password">
-      <button class="primary" onclick="addTeacher()">Add Teacher</button>
-    </div>
+    <!-- ACTION GRID -->
+    <div class="admin-grid">
 
-    <!-- ASSIGN SUBJECT -->
-    <div class="card">
-      <h3>Assign Subject</h3>
-      <select id="teacherSelect"></select>
-      <input id="subjectName" placeholder="Subject Name">
-      <input id="subjectCode" placeholder="Subject Code">
-      <button class="primary" onclick="assignSubject()">Assign Subject</button>
+      <!-- ADD TEACHER -->
+      <div class="admin-card glass">
+        <h3>➕ Add Teacher</h3>
+        <input id="tname" placeholder="Name">
+        <input id="temail" placeholder="Email">
+        <input id="tpassword" placeholder="Password">
+        <button class="primary" onclick="addTeacher()">Create Teacher</button>
+      </div>
+
+      <!-- ASSIGN SUBJECT -->
+      <div class="admin-card glass">
+        <h3>📚 Assign Subject</h3>
+        <select id="teacherSelect"></select>
+        <input id="subjectName" placeholder="Subject Name">
+        <input id="subjectCode" placeholder="Subject Code">
+        <button class="primary" onclick="assignSubject()">Assign Subject</button>
+      </div>
+
     </div>
 
     <!-- TEACHERS -->
-    <div class="card">
-      <h3>Teachers</h3>
+    <div class="section">
+      <h2>Teachers</h2>
       <div id="teacherList" class="teacher-grid"></div>
     </div>
 
     <!-- TEACHER SUBJECT DETAILS -->
-    <div class="card" id="teacherDetails" style="display:none;">
+    <div class="section glass" id="teacherDetails" style="display:none;">
       <h3 id="teacherName"></h3>
       <ul id="subjectList"></ul>
     </div>
