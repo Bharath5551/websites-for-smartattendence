@@ -8,41 +8,40 @@
 
 <body class="login-body">
 
-  <!-- BACKGROUND GLOW -->
-  <div class="bg-glow"></div>
+  <!-- Animated background -->
+  <div class="login-bg"></div>
 
-  <!-- LOGIN CARD -->
-  <div class="login-card glass">
+  <!-- Login Card -->
+  <div class="login-wrapper">
+    <div class="login-card">
 
-    <div class="login-header">
-      <div class="admin-icon">🛡️</div>
-      <h2>Admin Panel</h2>
-      <p class="login-sub">Secure access for administrators</p>
-    </div>
+      <div class="login-icon">🛡️</div>
 
-    <form id="adminLoginForm" class="login-form">
+      <h2>Admin Login</h2>
+      <p class="login-sub">Smart Attendance System</p>
 
-      <div class="input-group">
-        <input type="email" id="email" required>
-        <label>Admin Email</label>
+      <form id="adminLoginForm">
+        <div class="input-group">
+          <input type="email" id="email" required />
+          <label>Email</label>
+        </div>
+
+        <div class="input-group">
+          <input type="password" id="password" required />
+          <label>Password</label>
+        </div>
+
+        <button type="submit" class="primary-btn" id="loginBtn">
+          <span id="btnText">Login</span>
+          <span id="spinner" class="spinner" style="display:none;"></span>
+        </button>
+      </form>
+
+      <div class="login-footer">
+        © 2026 Smart Attendance
       </div>
 
-      <div class="input-group">
-        <input type="password" id="password" required>
-        <label>Password</label>
-      </div>
-
-      <button type="submit" class="primary-btn" id="loginBtn">
-        <span id="btnText">Login</span>
-        <span id="spinner" class="spinner" style="display:none;"></span>
-      </button>
-
-    </form>
-
-    <div class="login-footer">
-      <span>Smart Attendance System</span>
     </div>
-
   </div>
 
   <script src="js/admin-auth.js"></script>
