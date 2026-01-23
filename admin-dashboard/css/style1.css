@@ -1,0 +1,85 @@
+/* ================= DASHBOARD ALIGNMENT FIX ================= */
+
+/* ---------- PAGE CONTAINER ---------- */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* ---------- HERO SPACING ---------- */
+.hero {
+  margin-bottom: 0;
+}
+
+/* ---------- SECTION FIX ---------- */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+.section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* ---------- LOCATION TOGGLE ---------- */
+.location-toggle {
+  align-self: flex-start;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-radius: 14px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ---------- SUBJECT GRID ---------- */
+.subject-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  justify-items: center;
+}
+
+/* ---------- SUBJECT CARD ---------- */
+.subject-card {
+  width: 100%;
+  max-width: 360px;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+/* ---------- EMPTY STATE ---------- */
+.empty-state {
+  align-self: center;
+  margin-top: 24px;
+  font-size: 15px;
+  color: #6b7280;
+}
+
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 32px 16px;
+    gap: 36px;
+  }
+
+  .subject-card {
+    max-width: 100%;
+  }
+}
