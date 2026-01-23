@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("loginForm");
   const loginBtn = document.getElementById("loginBtn");
-  const btnText = document.getElementById("btnText");
   const spinner = document.getElementById("spinner");
+  const btnText = document.getElementById("btnText");
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // 🔹 Instant visual feedback
     loginBtn.disabled = true;
-    btnText.innerText = "Signing in";
     spinner.style.display = "inline-block";
+    btnText.innerText = "Signing in...";
 
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value.trim();
 
     try {
       const res = await fetch(
@@ -31,25 +30,23 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(data.message || "Login failed");
       }
 
+      // 🔐 ONLY TEACHERS ALLOWED
       if (data.role !== "teacher") {
-        throw new Error("Only teachers allowed");
+        throw new Error("Only teachers can access this dashboard");
       }
 
-      // ✅ Success
+      // ✅ STORE AUTH DATA HERE
       localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role);
 
-      // 🔥 Small delay for smoothness (UX trick)
-      setTimeout(() => {
-        window.location.href = "dashboard.html";
-      }, 300);
+      // 🚀 REDIRECT
+      window.location.href = "dashboard.html";
 
     } catch (err) {
       alert(err.message);
-
-      // 🔄 Reset button
       loginBtn.disabled = false;
-      btnText.innerText = "Login";
       spinner.style.display = "none";
+      btnText.innerText = "Login";
     }
   });
 });
