@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin Login</title>
+  <meta charset="UTF-8">
+  <title>Admin Login • Smart Attendance</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="login-body">
-  <div class="login-card">
-    <h2>Admin Login</h2>
-    <form id="adminLoginForm">
-      <input type="email" id="email" placeholder="Admin Email" required>
-      <input type="password" id="password" placeholder="Password" required>
-      <button type="submit">Login</button>
+
+  <!-- BACKGROUND GLOW -->
+  <div class="bg-glow"></div>
+
+  <!-- LOGIN CARD -->
+  <div class="login-card glass">
+
+    <div class="login-header">
+      <div class="admin-icon">🛡️</div>
+      <h2>Admin Panel</h2>
+      <p class="login-sub">Secure access for administrators</p>
+    </div>
+
+    <form id="adminLoginForm" class="login-form">
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Admin Email</label>
+      </div>
+
+      <div class="input-group">
+        <input type="password" id="password" required>
+        <label>Password</label>
+      </div>
+
+      <button type="submit" class="primary-btn" id="loginBtn">
+        <span id="btnText">Login</span>
+        <span id="spinner" class="spinner" style="display:none;"></span>
+      </button>
+
     </form>
+
+    <div class="login-footer">
+      <span>Smart Attendance System</span>
+    </div>
+
   </div>
+
   <script src="js/admin-auth.js"></script>
 </body>
 </html>
