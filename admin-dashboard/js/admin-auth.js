@@ -16,7 +16,8 @@ document.getElementById("adminLoginForm").addEventListener("submit", async e => 
     alert("Not authorized");
     return;
   }
-
-  localStorage.setItem("adminToken", data.token);
+localStorage.setItem("token", data.token);
+      localStorage.setItem("role", data.role);
+  
   window.location.href = "dashboard.html";
 });
