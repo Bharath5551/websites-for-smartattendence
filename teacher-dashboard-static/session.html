@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Attendance Session</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="hero">
+      <div>
+        <h1 id="subjectName">Attendance Session</h1>
+        <p id="timerText">Session active</p>
+      </div>
+      <button class="logout-btn" onclick="logout()">End Session</button>
+    </div>
+
+    <!-- QR CARD -->
+    <div class="card" style="text-align:center;">
+      <img id="qrImage" width="280" />
+      <p style="margin-top:16px;">Scan this QR to mark attendance</p>
+    </div>
+
+    <!-- 🔴 LIVE ATTENDANCE LIST (THIS WAS MISSING) -->
+    <div class="card">
+      <h3>Students Marked Present</h3>
+      <ul id="liveList"></ul>
+    </div>
+
+  </div>
+
+  <script src="js/session.js"></script>
+</body>
+</html>
