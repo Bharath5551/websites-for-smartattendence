@@ -1,3 +1,10 @@
+// 🔐 FRONTEND AUTH GUARD
+const token = localStorage.getItem("token");
+const role = localStorage.getItem("role");
+
+if (!token || role !== "admin") {
+  window.location.replace("index.html");
+}
 console.log("ADMIN DASHBOARD JS LOADED");
 
 const token = localStorage.getItem("adminToken");
